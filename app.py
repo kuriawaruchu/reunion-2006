@@ -109,7 +109,6 @@ st.markdown(rows, unsafe_allow_html=True)
 st.markdown(f"""
 <div class="facts">
 <div class="fact hot"><strong>KES {raised:,}</strong><span>raised so far</span></div>
-<div class="fact"><strong>{open_seats}</strong><span>seats still open</span></div>
 <div class="fact"><strong>KES {PER_PERSON:,}</strong><span>per classmate</span></div>
 </div>
 <p class="cta">Book your space with KES {PER_PERSON:,}.</p>
