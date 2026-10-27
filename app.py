@@ -82,7 +82,7 @@ st.markdown(f"""
 <h2>20 Year Reunion</h1> 
 <p><b>{paid} of {GOAL}</b> classmates will be attending.</p>
 <div class="prog"><i></i></div>
-<div class="progl"><span>{paid} claimed</span><span>Goal: {GOAL} attendees</span></div>
+<div class="progl"><span>{paid} confirmed</span><span>Goal: {GOAL} attendees</span></div>
 </div>
 """, unsafe_allow_html=True)
 
