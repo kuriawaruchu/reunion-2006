@@ -95,6 +95,9 @@ seats = "".join(
 st.markdown(f'<h2 class="sec">Every coloured circle is a classmate you will meet</h2><div class="seats">{seats}</div>',
             unsafe_allow_html=True)
 
+# ---- Battle of the Streams ----
+st.markdown('<h2 class="sec">Battle of the Streams</h2>', unsafe_allow_html=True)
+
 # ---- Stream rows ----
 top = max(summary["People"].max(), 1) if len(summary) else 1
 rows = "".join(
