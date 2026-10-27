@@ -72,6 +72,13 @@ header[data-testid="stHeader"] {{ background: transparent; }}
 .fact span {{ color:#6E4B55; font-size:.92rem; }}
 .cta {{ font-family:Fraunces,Georgia,serif; font-weight:600; font-size:1.25rem; color:{OXBLOOD}; }}
 h2.sec {{ font-family:Fraunces,Georgia,serif; font-weight:600; color:{OXBLOOD}; font-size:1.5rem; margin:0 0 10px; padding:0; }}
+[data-testid="stHeading"] h2 {{
+    font-family: Fraunces, Georgia, serif;
+    font-weight: 600;
+    color: {OXBLOOD};
+    font-size: 1.5rem;
+    padding: 0.2rem 0 0.4rem;
+}}
 </style>
 """, unsafe_allow_html=True)
 
@@ -92,11 +99,11 @@ seats = "".join(
     if i < paid else '<div class="seat"></div>'
     for i in range(max(GOAL, paid))
 )
-st.markdown(f'<h2 class="sec">Every coloured circle is a classmate you will meet</h2><div class="seats">{seats}</div>',
-            unsafe_allow_html=True)
+st.subheader("Every seat is a classmate", anchor="every-seat-is-a-classmate")
+st.markdown(f'<div class="seats">{seats}</div>', unsafe_allow_html=True)
 
 # ---- Battle of the Streams ----
-st.markdown('<h2 class="sec">Battle of the Streams</h2>', unsafe_allow_html=True)
+st.subheader("Battle of the Streams", anchor="battle-of-the-streams")
 
 # ---- Stream rows ----
 top = max(summary["People"].max(), 1) if len(summary) else 1
