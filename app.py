@@ -79,8 +79,9 @@ h2.sec {{ font-family:Fraunces,Georgia,serif; font-weight:600; color:{OXBLOOD}; 
 # ---- Header with progress ----
 st.markdown(f"""
 <div class="band">
-<h1>Class of 2006 Reunion</h1>
-<p><b>{paid} of {GOAL}</b> classmates have paid in. Every filled circle is one seat claimed.</p>
+<h1>Class of 2006</h1>
+<h2>20 Year Reunion</h1> 
+<p><b>{paid} of {GOAL}</b> classmates will be attending.</p>
 <div class="prog"><i></i></div>
 <div class="progl"><span>{paid} claimed</span><span>Goal: {GOAL} attendees</span></div>
 </div>
