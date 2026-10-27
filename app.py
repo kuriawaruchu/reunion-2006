@@ -92,7 +92,7 @@ seats = "".join(
     if i < paid else '<div class="seat"></div>'
     for i in range(max(GOAL, paid))
 )
-st.markdown(f'<h2 class="sec">Every seat is a classmate you will meet</h2><div class="seats">{seats}</div>',
+st.markdown(f'<h2 class="sec">Every coloured circle is a classmate you will meet</h2><div class="seats">{seats}</div>',
             unsafe_allow_html=True)
 
 # ---- Stream rows ----
