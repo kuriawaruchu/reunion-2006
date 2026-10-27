@@ -34,7 +34,6 @@ def load(url: str) -> pd.DataFrame:
 df = load(SHEET_URL)
 paid = len(df)
 raised = int(df["Amount"].sum())
-open_seats = max(GOAL - paid, 0)
 pct = min(paid / GOAL, 1) * 100
 
 summary = (df.groupby("Stream")
@@ -93,7 +92,7 @@ seats = "".join(
     if i < paid else '<div class="seat"></div>'
     for i in range(max(GOAL, paid))
 )
-st.markdown(f'<h2 class="sec">Every seat is a classmate</h2><div class="seats">{seats}</div>',
+st.markdown(f'<h2 class="sec">Every seat is a classmate you will meet</h2><div class="seats">{seats}</div>',
             unsafe_allow_html=True)
 
 # ---- Stream rows ----
@@ -113,7 +112,7 @@ st.markdown(f"""
 <div class="fact"><strong>{open_seats}</strong><span>seats still open</span></div>
 <div class="fact"><strong>KES {PER_PERSON:,}</strong><span>per classmate</span></div>
 </div>
-<p class="cta">{open_seats} seats are waiting. Claim yours with KES {PER_PERSON:,}.</p>
+<p class="cta">Book your space with KES {PER_PERSON:,}.</p>
 """, unsafe_allow_html=True)
 
 if st.button("Refresh now"):
