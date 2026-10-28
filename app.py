@@ -99,7 +99,7 @@ seats = "".join(
     if i < paid else '<div class="seat"></div>'
     for i in range(max(GOAL, paid))
 )
-st.subheader("Every seat is a classmate", anchor="every-seat-is-a-classmate")
+st.subheader("Every circle is a classmate you will be excited to meet!", anchor="every-seat-is-a-classmate")
 st.markdown(f'<div class="seats">{seats}</div>', unsafe_allow_html=True)
 
 # ---- Battle of the Streams ----
