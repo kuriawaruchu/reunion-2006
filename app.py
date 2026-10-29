@@ -34,7 +34,7 @@ def load(url: str) -> pd.DataFrame:
 df = load(SHEET_URL)
 paid = len(df)
 raised = int(df["Amount"].sum())
-pct = min(paid / GOAL, 1) * 100
+# pct = min(paid / GOAL, 1) * 100
 
 summary = (df.groupby("Stream")
              .agg(People=("Amount", "size"), Total=("Amount", "sum"))
@@ -87,7 +87,8 @@ st.markdown(f"""
 <div class="band">
 <h1>Class of 2006</h1>
 <h2>20 Year Reunion</h1> 
-<p><b>{paid} of {GOAL}</b> classmates will be attending.</p>
+<p><b>{paid} classmates will be attending.</p>
+# <p><b>{paid} of {GOAL}</b> classmates will be attending.</p>
 <div class="prog"><i></i></div>
 <div class="progl"><span>{paid} confirmed</span><span>Goal: {GOAL} attendees</span></div>
 </div>
@@ -103,6 +104,9 @@ st.subheader("Every circle is a classmate you will be excited to meet!", anchor=
 st.markdown(f'<div class="seats">{seats}</div>', unsafe_allow_html=True)
 
 # ---- Battle of the Streams ----
+def baddies(n: int) -> str:
+    return f"{n} baddie" + ("" if n == 1 else "s")
+
 st.subheader("Battle of the Streams", anchor="battle-of-the-streams")
 
 # ---- Stream rows ----
@@ -110,7 +114,7 @@ top = max(summary["People"].max(), 1) if len(summary) else 1
 rows = "".join(
     f'<div class="row"><span class="nm">Stream {r.Stream}</span>'
     f'<span class="bar"><i style="width:{r.People / top * 100}%;background:{COLORS.get(r.Stream, FALLBACK)}"></i></span>'
-    f'<span class="meta"><b>{r.People} classmates</b> &middot; KES {r.Total:,}</span></div>'
+    f'<span class="meta"><b>{baddies(r.People)}</b> &middot; KES {r.Total:,}</span></div>'
     for r in summary.itertuples()
 )
 st.markdown(rows, unsafe_allow_html=True)
