@@ -88,7 +88,6 @@ st.markdown(f"""
 <h1>Class of 2006</h1>
 <h2>20 Year Reunion</h1> 
 <p><b>{paid} classmates will be attending.</p>
-# <p><b>{paid} of {GOAL}</b> classmates will be attending.</p>
 <div class="prog"><i></i></div>
 <div class="progl"><span>{paid} confirmed</span><span>Goal: {GOAL} attendees</span></div>
 </div>
