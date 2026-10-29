@@ -34,7 +34,7 @@ def load(url: str) -> pd.DataFrame:
 df = load(SHEET_URL)
 paid = len(df)
 raised = int(df["Amount"].sum())
-# pct = min(paid / GOAL, 1) * 100
+pct = min(paid / GOAL, 1) * 100
 
 summary = (df.groupby("Stream")
              .agg(People=("Amount", "size"), Total=("Amount", "sum"))
